@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact — VK Global</title>
+<meta name="description" content="Send a product inquiry or general business inquiry to the VK Global trade desk.">
+<meta property="og:title" content="Contact — VK Global">
+<meta property="og:description" content="Send a product inquiry or general business inquiry to the VK Global trade desk.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <div class="brand-mark">VK</div>
+      <div class="brand-name">VK Global<small>Investment · Logistics · Trade</small></div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <a href="cart.html" class="cart-btn" aria-label="Inquiry cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-badge">0</span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu"><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">Home</a> / Contact</div>
+    <h1>Send us an inquiry.</h1>
+    <p>Tell us what you need — stainless steel products, logistics support or technology investment discussion — and our team will reply within one business day.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-wrap">
+      <div class="form-card">
+        <div class="form-success" id="formSuccess">✓ Thank you! Your inquiry has been received. Our team will reply within one business day.</div>
+        <form id="contactForm" novalidate>
+          <div class="form-grid">
+            <div class="field"><label>Full Name *</label><input required name="name" type="text" placeholder="Your name"></div>
+            <div class="field"><label>Email *</label><input required name="email" type="email" placeholder="you@company.com"></div>
+            <div class="field"><label>Phone</label><input name="phone" type="tel" placeholder="+__ ___ ___ ____"></div>
+            <div class="field"><label>Company Name</label><input name="company" type="text" placeholder="Your company"></div>
+          </div>
+
+          <label style="font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);font-weight:600;display:block;margin-bottom:10px">Inquiry Type</label>
+          <div class="inquiry-types">
+            <label>
+              <input type="radio" name="itype" id="typeAsk" value="ask">
+              <div><p class="ttl">Ask about selected products</p><p class="sub">Use the products in your inquiry cart or the product you just opened.</p></div>
+            </label>
+            <label>
+              <input type="radio" name="itype" id="typeGen" value="general">
+              <div><p class="ttl">General inquiry</p><p class="sub">Logistics, technology investment or other business questions.</p></div>
+            </label>
+          </div>
+
+          <div class="selected-preview" id="selectedPreview" style="display:none"></div>
+
+          <div class="field full"><label>Message *</label><textarea required name="message" id="msgField" placeholder="Tell us about your project, target volume, delivery destination…"></textarea></div>
+
+          <button class="btn btn-copper" type="submit">Send Inquiry →</button>
+        </form>
+      </div>
+
+      <aside class="contact-info">
+        <h3>Business contact</h3>
+        <div class="ci-row"><div class="lbl">Company</div><div class="val">VK Global Investment &amp; Technology Development JSC</div></div>
+        <div class="ci-row"><div class="lbl">Email</div><div class="val"><a href="mailto:info@vkglobal.vn">info@vkglobal.vn</a></div></div>
+        <div class="ci-row"><div class="lbl">Address</div><div class="val" style="color:rgba(243,241,235,.55);font-family:inherit">— to be updated —</div></div>
+        <div class="ci-row"><div class="lbl">Response time</div><div class="val">Within 1 business day</div></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand" style="margin-bottom:18px">
+          <div class="brand-mark">VK</div>
+          <div class="brand-name" style="color:#fff">VK Global<small>Investment · Logistics · Trade</small></div>
+        </a>
+        <p>A premium business platform for logistics coordination, technology investment and international stainless steel product trading.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Policies</h4>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="cart.html">Inquiry Cart</a>
+      </div>
+      <div>
+        <h4>Business Info</h4>
+        <p style="color:#fff;font-family:'Space Grotesk',sans-serif;margin-bottom:10px">VK Global Investment &amp; Technology Development JSC</p>
+        <p>Email: <a href="mailto:info@vkglobal.vn" style="display:inline">info@vkglobal.vn</a></p>
+        <p>Address: <span style="color:rgba(243,241,235,.5)">— to be updated —</span></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span id="yr"></span> VK Global Investment &amp; Technology Development JSC. All rights reserved.</div>
+      <div>Logistics · Technology Investment · Stainless Steel Trade</div>
+    </div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+<script src="assets/js/product.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
