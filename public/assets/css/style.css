@@ -957,3 +957,221 @@ p{margin:0 0 1em}
   background-clip:text;
   color:transparent;
 }
+
+/* =========================================================
+   Force product images to show full image, no cropping
+   ========================================================= */
+
+.imgwrap,
+.pd-main,
+.pd-thumb,
+.ci-img,
+.sp-img,
+.fp-img,
+.steel-main,
+.steel-mini{
+  background:#fff !important;
+  overflow:hidden;
+}
+
+/* Product card images */
+.pcard .imgwrap img,
+.imgwrap img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  object-position:center !important;
+}
+
+/* Product detail main image */
+.pd-main img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  object-position:center !important;
+}
+
+/* Product detail thumbnails */
+.pd-thumb img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  object-position:center !important;
+}
+
+/* Cart images */
+.ci-img img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  object-position:center !important;
+}
+
+/* Contact selected product preview images */
+.sp-img img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  object-position:center !important;
+}
+
+/* Featured product / home section images */
+.fp-img img,
+.steel-main img,
+.steel-mini img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  object-position:center !important;
+}
+
+/* Give images enough room so full product is visible */
+.pcard .imgwrap{
+  min-height:230px;
+  padding:16px;
+}
+
+.pd-main{
+  min-height:460px;
+  padding:24px;
+}
+
+.pd-thumb{
+  padding:6px;
+}
+
+.ci-img{
+  padding:10px;
+}
+
+.sp-img{
+  padding:5px;
+}
+
+/* Mobile image adjustment */
+@media(max-width:560px){
+  .pcard .imgwrap{
+    min-height:220px;
+  }
+
+  .pd-main{
+    min-height:320px;
+  }
+}
+
+/* =========================================================
+   Product images: show full image, no crop, no over-zoom
+   ========================================================= */
+
+.pcard .imgwrap,
+.imgwrap{
+  height:260px !important;
+  min-height:260px !important;
+  padding:18px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  background:#fff !important;
+  overflow:hidden !important;
+}
+
+.pcard .imgwrap img,
+.imgwrap img{
+  width:auto !important;
+  height:auto !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+  display:block !important;
+}
+
+/* Product detail main image */
+.pd-main{
+  min-height:480px !important;
+  padding:28px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  background:#fff !important;
+  overflow:hidden !important;
+}
+
+.pd-main img{
+  width:auto !important;
+  height:auto !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+}
+
+/* Product detail thumbnails */
+.pd-thumb{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:6px !important;
+  background:#fff !important;
+  overflow:hidden !important;
+}
+
+.pd-thumb img{
+  width:auto !important;
+  height:auto !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+}
+
+/* Cart image */
+.ci-img{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:10px !important;
+  background:#fff !important;
+  overflow:hidden !important;
+}
+
+.ci-img img{
+  width:auto !important;
+  height:auto !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+}
+
+/* Contact selected product preview image */
+.sp-img{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:5px !important;
+  background:#fff !important;
+  overflow:hidden !important;
+}
+
+.sp-img img{
+  width:auto !important;
+  height:auto !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:center center !important;
+}
+
+/* Mobile */
+@media(max-width:560px){
+  .pcard .imgwrap,
+  .imgwrap{
+    height:230px !important;
+    min-height:230px !important;
+  }
+
+  .pd-main{
+    min-height:330px !important;
+  }
+}

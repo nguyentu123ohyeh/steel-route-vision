@@ -328,6 +328,405 @@
   transform:translateY(-110%);
 }
 
+
+/* =========================================================
+   Home product image display fixes
+   - Uses assets/images/product/*.jpg
+   - Shows full product image without crop or over-zoom
+   ========================================================= */
+
+.hero-manifest{
+  position:relative;
+  overflow:hidden;
+  padding:110px 0 92px;
+  min-height:calc(100vh - 76px);
+  background:
+    radial-gradient(circle at 82% 12%, rgba(215,161,47,.22), transparent 26%),
+    radial-gradient(circle at 12% 88%, rgba(217,19,31,.16), transparent 30%),
+    linear-gradient(135deg,#fffaf3 0%,#f3eee7 44%,#e7ddd1 100%);
+}
+.hero-manifest:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(114,17,17,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(114,17,17,.045) 1px, transparent 1px);
+  background-size:54px 54px;
+  pointer-events:none;
+}
+.hero-manifest:after{
+  content:"";
+  position:absolute;
+  right:-220px;
+  top:-120px;
+  width:620px;
+  height:620px;
+  border-radius:50%;
+  background:conic-gradient(from 180deg, rgba(217,19,31,.22), rgba(215,161,47,.28), transparent 65%);
+  filter:blur(8px);
+  opacity:.75;
+}
+.manifest-bg-text{
+  position:absolute;
+  left:3%;
+  bottom:2%;
+  font-family:var(--font-display);
+  font-size:clamp(70px,15vw,210px);
+  font-weight:900;
+  letter-spacing:-.09em;
+  color:rgba(114,17,17,.045);
+  line-height:.8;
+  pointer-events:none;
+  white-space:nowrap;
+}
+.hero-manifest-wrap{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:90px minmax(0,1fr) minmax(420px,520px);
+  gap:42px;
+  align-items:center;
+}
+.hero-left-rail{
+  min-height:560px;
+  border-left:1px solid rgba(217,19,31,.22);
+  border-right:1px solid rgba(215,161,47,.26);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  padding:24px 0;
+}
+.hero-left-rail span{
+  width:54px;
+  height:54px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:linear-gradient(135deg,#d9131f,#8f1018);
+  color:#fff;
+  font-family:var(--font-display);
+  font-weight:900;
+  box-shadow:0 14px 30px rgba(217,19,31,.24);
+}
+.hero-left-rail p{
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  margin:0;
+  color:#8b6a22;
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+}
+.hero-main-copy h1{
+  max-width:780px;
+  color:#241515;
+  font-size:clamp(48px,6vw,86px);
+  line-height:.92;
+  letter-spacing:-.075em;
+  margin-bottom:26px;
+}
+.hero-main-copy h1 span{
+  display:block;
+  color:#b20f1b;
+}
+.hero-main-copy p{
+  max-width:620px;
+  color:#625b57;
+  font-size:17px;
+  line-height:1.75;
+}
+.hero-quick-facts{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  max-width:640px;
+  margin-top:34px;
+}
+.hero-quick-facts div{
+  padding:18px 16px;
+  border-radius:18px;
+  background:rgba(255,255,255,.74);
+  border:1px solid rgba(215,161,47,.24);
+  box-shadow:0 14px 34px rgba(114,17,17,.07);
+}
+.hero-quick-facts b{
+  display:block;
+  color:#b20f1b;
+  font-family:var(--font-display);
+  font-size:30px;
+  line-height:1;
+}
+.hero-quick-facts span{
+  display:block;
+  margin-top:8px;
+  color:#7b6d66;
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+.hero-manifest-panel{
+  position:relative;
+  overflow:hidden;
+  padding:24px;
+  border-radius:34px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.94),rgba(255,250,242,.82)),
+    repeating-linear-gradient(135deg,rgba(215,161,47,.08) 0 1px,transparent 1px 18px);
+  border:1px solid rgba(215,161,47,.32);
+  box-shadow:0 34px 90px rgba(114,17,17,.18);
+}
+.hero-manifest-panel:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg, transparent 0 44%, rgba(217,19,31,.055) 45% 55%, transparent 56% 100%);
+  pointer-events:none;
+}
+.manifest-header,
+.route-strip,
+.steel-showcase,
+.manifest-footer{
+  position:relative;
+  z-index:1;
+}
+.manifest-header{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  align-items:flex-start;
+  padding-bottom:18px;
+  border-bottom:1px solid rgba(114,17,17,.12);
+}
+.manifest-label{
+  color:#b20f1b;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.manifest-header h3{
+  margin:6px 0 0;
+  color:#241515;
+  font-size:28px;
+  line-height:1;
+}
+.manifest-status{
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(217,19,31,.1);
+  color:#b20f1b;
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+}
+.route-strip{
+  display:grid;
+  grid-template-columns:1fr 44px 1fr 44px 1fr;
+  align-items:start;
+  gap:10px;
+  margin:24px 0;
+}
+.route-point{
+  min-height:118px;
+  padding:16px;
+  border-radius:18px;
+  background:#fff;
+  border:1px solid rgba(215,161,47,.26);
+}
+.route-point span{
+  color:#d7a12f;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.16em;
+}
+.route-point b{
+  display:block;
+  margin-top:10px;
+  color:#241515;
+  font-family:var(--font-display);
+  font-size:18px;
+  line-height:1.1;
+}
+.route-point p{
+  margin-top:8px;
+  color:#706761;
+  font-size:12px;
+  line-height:1.45;
+}
+.route-line{
+  height:2px;
+  margin-top:46px;
+  background:linear-gradient(90deg,#d9131f,#d7a12f);
+  position:relative;
+}
+.route-line:after{
+  content:"";
+  position:absolute;
+  right:-3px;
+  top:50%;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#d9131f;
+  transform:translateY(-50%);
+}
+.steel-showcase{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:14px;
+}
+.steel-main{
+  min-height:280px;
+  padding:18px;
+  border-radius:24px;
+  background:linear-gradient(180deg,#fff,#f5efe7);
+  border:1px solid rgba(215,161,47,.24);
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.steel-main img{
+  display:block !important;
+  width:auto !important;
+  height:auto !important;
+  max-width:100% !important;
+  max-height:170px !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  margin:0 auto !important;
+}
+.steel-main span{
+  display:block;
+  color:#b20f1b;
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+}
+.steel-main h4{
+  margin:8px 0 4px;
+  color:#241515;
+  font-family:var(--font-display);
+  font-size:24px;
+}
+.steel-main p{
+  color:#706761;
+  font-size:13px;
+  line-height:1.5;
+}
+.steel-mini-grid{
+  display:grid;
+  gap:10px;
+}
+.steel-mini{
+  display:grid;
+  grid-template-columns:72px 1fr;
+  gap:10px;
+  align-items:center;
+  padding:10px;
+  border-radius:18px;
+  background:#fff;
+  border:1px solid rgba(215,161,47,.22);
+  overflow:hidden;
+}
+.steel-mini img{
+  display:block !important;
+  width:auto !important;
+  height:auto !important;
+  max-width:72px !important;
+  max-height:58px !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  margin:0 auto !important;
+}
+.steel-mini span{
+  color:#241515;
+  font-weight:900;
+  font-size:13px;
+}
+.manifest-footer{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:14px;
+}
+.manifest-footer div{
+  padding:14px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#3d1215,#7c111a);
+  color:#fff;
+}
+.manifest-footer span{
+  display:block;
+  color:rgba(255,255,255,.62);
+  font-size:10px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+}
+.manifest-footer b{
+  display:block;
+  margin-top:6px;
+  color:#ffdb7a;
+  font-family:var(--font-display);
+  font-size:17px;
+}
+
+/* Featured product image: no crop, no forced stretch */
+.fp-img{
+  height:210px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:18px !important;
+  background:#fff !important;
+  overflow:hidden !important;
+}
+.fp-img img{
+  display:block !important;
+  width:auto !important;
+  height:auto !important;
+  max-width:100% !important;
+  max-height:100% !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  margin:auto !important;
+}
+.featured-product-card:hover .fp-img img{
+  transform:none !important;
+}
+
+@media(max-width:1080px){
+  .hero-manifest-wrap{grid-template-columns:1fr}
+  .hero-left-rail{display:none}
+  .hero-manifest-panel{max-width:760px}
+}
+@media(max-width:720px){
+  .hero-manifest{padding:70px 0}
+  .hero-main-copy h1{font-size:44px}
+  .hero-quick-facts,
+  .steel-showcase,
+  .manifest-footer{grid-template-columns:1fr}
+  .route-strip{grid-template-columns:1fr}
+  .route-line{
+    width:2px;
+    height:34px;
+    margin:0 auto;
+  }
+  .route-line:after{
+    right:auto;
+    left:50%;
+    top:auto;
+    bottom:-3px;
+    transform:translateX(-50%);
+  }
+}
+
 </style>
 </head>
 
@@ -385,7 +784,7 @@
 
       <div class="hero-quick-facts">
         <div>
-          <b>22+</b>
+          <b>32+</b>
           <span>Stainless SKUs</span>
         </div>
         <div>
@@ -434,7 +833,7 @@
 
       <div class="steel-showcase">
         <div class="steel-main">
-          <img src="assets/images/1.webp" alt="Stainless steel coil">
+          <img src="assets/images/product/1.jpg" alt="Stainless steel coil">
           <div>
             <span>Featured Material</span>
             <h4>304 Stainless Coil</h4>
@@ -444,15 +843,15 @@
 
         <div class="steel-mini-grid">
           <div class="steel-mini">
-            <img src="assets/images/4.webp" alt="Stainless steel pipe">
+            <img src="assets/images/product/4.jpg" alt="Stainless steel pipe">
             <span>Pipes</span>
           </div>
           <div class="steel-mini">
-            <img src="assets/images/8.webp" alt="Stainless steel profile">
+            <img src="assets/images/product/8.jpg" alt="Stainless steel profile">
             <span>Profiles</span>
           </div>
           <div class="steel-mini">
-            <img src="assets/images/12.webp" alt="Stainless steel fittings">
+            <img src="assets/images/product/12.jpg" alt="Stainless steel fittings">
             <span>Fittings</span>
           </div>
         </div>
@@ -620,7 +1019,7 @@
     <div class="featured-product-grid">
       <a href="products.html" class="featured-product-card reveal">
         <div class="fp-img">
-          <img src="assets/images/1.webp" alt="Stainless Steel Coils and Sheets">
+          <img src="assets/images/product/1.jpg" alt="Stainless Steel Coils and Sheets">
         </div>
         <div class="fp-body">
           <span class="fp-code">CATEGORY 01</span>
@@ -636,7 +1035,7 @@
 
       <a href="products.html" class="featured-product-card reveal">
         <div class="fp-img">
-          <img src="assets/images/4.webp" alt="Stainless Steel Pipes and Tubes">
+          <img src="assets/images/product/4.jpg" alt="Stainless Steel Pipes and Tubes">
         </div>
         <div class="fp-body">
           <span class="fp-code">CATEGORY 02</span>
@@ -652,7 +1051,7 @@
 
       <a href="products.html" class="featured-product-card reveal">
         <div class="fp-img">
-          <img src="assets/images/8.webp" alt="Stainless Steel Bars and Profiles">
+          <img src="assets/images/product/8.jpg" alt="Stainless Steel Bars and Profiles">
         </div>
         <div class="fp-body">
           <span class="fp-code">CATEGORY 03</span>
@@ -668,7 +1067,7 @@
 
       <a href="products.html" class="featured-product-card reveal">
         <div class="fp-img">
-          <img src="assets/images/12.webp" alt="Stainless Steel Fittings and Components">
+          <img src="assets/images/product/12.jpg" alt="Stainless Steel Fittings and Components">
         </div>
         <div class="fp-body">
           <span class="fp-code">CATEGORY 04</span>
@@ -752,7 +1151,6 @@
         <h4>Business Info</h4>
         <p style="color:#b20f1b;font-family:'Space Grotesk',sans-serif;margin-bottom:10px">VK Global Investment &amp; Technology Development JSC</p>
         <p>Email: <a href="mailto:info@vkgloballtd.com" style="display:inline">info@vkgloballtd.com</a></p>
-        <p>Address: <span style="color:rgba(243,241,235,.5)">— to be updated —</span></p>
       </div>
     </div>
 
@@ -766,11 +1164,6 @@
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
 
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
-if (navToggle && navLinks) {
-  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-}
 </script>
 <script src="assets/js/product.js"></script>
 <script src="assets/js/main.js"></script>
